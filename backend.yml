@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: backend-pod
+  labels:
+    tier: backend
+spec:
+  containers:
+  - name: backend
+    image: bankierubybank/nodejs-express
+    ports:
+    - containerPort: 8080
