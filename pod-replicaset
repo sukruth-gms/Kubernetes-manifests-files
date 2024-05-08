@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs-app
+  labels:
+    name: Set
+    type: back-end
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+       name: web
+       type: front-end
+  template:
+    metadata:
+       name: pod-web
+       labels:
+          name: web
+          type: front-end
+    spec:
+       containers:
+        - name: webcontainer
+          image: nginx

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-april
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: git
+      type: versioncontrol
+  template:
+    metadata:
+      name: my-app-git
+      labels:
+        app: git
+        type: versioncontrol
+    spec:
+      containers:
+      - name: git
+        image: bitnami/git
