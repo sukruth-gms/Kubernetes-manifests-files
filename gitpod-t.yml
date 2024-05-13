@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: vcapp
+  labels:
+    app: git
+    type: versioncontrol
+spec:
+  containers:
+  - name: git-container
+    image: bitnami/git
+   
+  tolerations:
+  - key: "app"
+    operator: "Equal" 
+    value: "git"
+    effect: "NoSchedule"

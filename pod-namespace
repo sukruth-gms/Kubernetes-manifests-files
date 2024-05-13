@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: new-app-nme
+   namespace: kube-public
+   labels:
+       name: app-nme
+       type: form
+spec:
+   containers:
+   - name: httpd
+     image: httpd
