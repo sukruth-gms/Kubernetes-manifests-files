@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-for-labeled-node
+spec:
+  containers:
+  - name: tree-graph
+    image: tree
+
+  nodeSelector:
+    size: free

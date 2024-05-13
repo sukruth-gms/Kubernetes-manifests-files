@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: application-pod
+  labels:
+    tier: application
+spec:
+  containers:
+  - name: application
+    image: sohammohite/react-app
+    ports:
+    - containerPort: 3306

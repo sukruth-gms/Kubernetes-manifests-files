@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: podapp
+   labels:
+      app: myapp
+      type: database
+spec:
+   containers:
+    - name: app-c
+      image: mongo
