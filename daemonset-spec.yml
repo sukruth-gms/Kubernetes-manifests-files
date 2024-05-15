@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata: 
+  name: monitoring-agent-pod
+spec:
+  selector:
+    matchLabels:
+      name: monitoring-agent-pod
+  template:
+    metadata:
+      labels:
+        name: monitoring-agent-pod
+    spec:
+      containers:
+      - name: monitoring-container
+        image: monitoring-agent
+

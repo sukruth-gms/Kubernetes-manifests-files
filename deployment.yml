@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deployment
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: nginx   # Indicate the label selector for the pods managed by this deployment
+  template:
+    metadata:
+      name: nginx
+      labels:
+        app: nginx
+        type: front-end
+    spec:
+      containers:
+      - name: nginx
+        image: nginx

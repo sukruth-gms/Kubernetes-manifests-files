@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+   name: ad-webapp-pod
+   labels:
+      name: ad-webapp-pod
+spec:
+   containers:
+    - name: webapp-container
+      image: sukruth17/adbook:v1
+      ports:
+      - containerPort: 8080

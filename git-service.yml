@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-git
+spec:
+  type: NodePort
+  ports:
+  - targetPort: 80
+    port: 80  # Corrected field name
+    nodePort: 30076
+  selector:
+    app: git
+    type: versioncontrol
